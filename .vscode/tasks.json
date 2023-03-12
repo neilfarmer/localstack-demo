@@ -1,0 +1,101 @@
+{
+  // See https://code.visualstudio.com/docs/editor/tasks#vscode
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "install-dependencies",
+      "type": "shell",
+      "command": "pip install --upgrade pip poetry; poetry install",
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "build-localstack",
+      "type": "shell",
+      "command": "poetry run localstack start -d; poetry run localstack status services; poetry run localstack status",
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "localstack-logs",
+      "type": "shell",
+      "command": "poetry run localstack logs",
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "teardown-localstack",
+      "type": "shell",
+      "command": "poetry run localstack stop",
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "new"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "run-python",
+      "type": "shell",
+      "command": "poetry install; poetry run python localstack-python/s3_test.py",
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "run-terraform-plan",
+      "type": "shell",
+      "command": "poetry install; poetry run tflocal -chdir=localstack-terraform init; poetry run tflocal -chdir=localstack-terraform plan",
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "run-terraform-apply",
+      "type": "shell",
+      "command": "poetry install; poetry run tflocal init; poetry run tflocal -chdir=localstack-terraform apply -auto-approve",
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "run-terraform-destroy",
+      "type": "shell",
+      "command": "poetry install; poetry run tflocal init; poetry run tflocal -chdir=localstack-terraform destroy -auto-approve",
+      "presentation": {
+        "reveal": "always",
+        "focus": true,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "profile",
+      "type": "promptString",
+      "description": "AWS Acount profile name"
+    }
+  ]
+}

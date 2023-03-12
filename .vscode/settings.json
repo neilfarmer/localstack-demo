@@ -1,0 +1,26 @@
+{
+  "workbench.colorTheme": "Abyss",
+  "workbench.colorCustomizations": {
+    "editorLineNumber.foreground": "#00ff00"
+  },
+  "window.commandCenter": true,
+  "vscode-pets.petColor": "red",
+  "vscode-pets.petSize": "medium",
+  "vscode-pets.petType": "fox",
+  "vscode-pets.position": "explorer",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "editor.formatOnSaveMode": "file",
+  "terminal.integrated.scrollback": 100000,
+  "editor.minimap.enabled": false,
+  "window.zoomLevel": 0.6,
+  "debug.toolBarLocation": "docked",
+  "editor.cursorBlinking": "phase",
+  "editor.cursorStyle": "line",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "terminal.integrated.fontSize": 12,
+  "workbench.sideBar.location": "left"
+}

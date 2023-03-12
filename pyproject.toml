@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "localstack-demo"
+version = "0.1.0"
+description = "Demo using Localstack with AWS Resources"
+authors = ["Neil Farmer <nfarmer371@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+localstack = "^1.4.0"
+localstack-client = "^1.39"
+boto3-stubs = {extras = ["essential"], version = "^1.26.89"}
+boto3 = "^1.26.89"
+terraform-local = "^0.6"
+colorama = "^0.4.6"
+jupyter = "^1.0.0"
+notebook = "^6.5.3"
+randomname = "^0.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

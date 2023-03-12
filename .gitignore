@@ -1,3 +1,13 @@
+# Terraform
+.terraform
+terraform.tfstate
+terraform.tf*
+.terraform*
+
+# Jupyter
+.DS_Store
+.ipynb*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
